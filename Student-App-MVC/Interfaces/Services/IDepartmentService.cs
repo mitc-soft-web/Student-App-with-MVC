@@ -8,8 +8,8 @@ public interface IDepartmentService
     public Task<BaseResponse<bool>> AddDepartment(CreateDepartmentRequestModel request); 
     public Task<BaseResponse<bool>> DeleteDepartment(int id);
     public Task<BaseResponse<DepartmentDTO>> GetDepartmentById(int id);
-    Task<BaseResponse<bool>> ExistsByName(string departmentName);
-    Task<List<BaseResponse<DepartmentDTO>>> GetAllDepartments();
-    Task<List<BaseResponse<DepartmentDTO>>> GetAllDepartmentsAndStudents();
-    Task<BaseResponse<DepartmentDTO>> UpdateDepartment(UpdateDepartmentRequestModel request);
+    //Task<BaseResponse<bool>> ExistsByName(string departmentName);
+    Task<BaseResponse<List<DepartmentDTO>>> GetAllDepartments();
+    Task<BaseResponse<List<DepartmentDTO>>> GetAllDepartmentsAndStudents();
+    Task<BaseResponse<DepartmentDTO>> UpdateDepartment(int id, UpdateDepartmentRequestModel request);
 }
