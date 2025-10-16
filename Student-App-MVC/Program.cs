@@ -1,10 +1,16 @@
 using Microsoft.EntityFrameworkCore;
+using Student_App_MVC.Implementations.Repositories;
+using Student_App_MVC.Implementations.Services;
+using Student_App_MVC.Interfaces.Repositories;
+using Student_App_MVC.Interfaces.Services;
 using Student_App_MVC.StudentDbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>()
+    .AddScoped<IDepartmentService, DepartmentService>();
 
 // Add Database
 builder.Services.AddDbContext<StudentContext>(options => 
