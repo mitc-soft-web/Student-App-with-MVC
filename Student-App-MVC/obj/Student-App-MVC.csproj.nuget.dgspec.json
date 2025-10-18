@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-MVC\\student-app-mvc\\Student-App-MVC.csproj": {}
+    "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-with-MVC\\Student-App-MVC\\Student-App-MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-MVC\\student-app-mvc\\Student-App-MVC.csproj": {
+    "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-with-MVC\\Student-App-MVC\\Student-App-MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-MVC\\student-app-mvc\\Student-App-MVC.csproj",
+        "projectUniqueName": "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-with-MVC\\Student-App-MVC\\Student-App-MVC.csproj",
         "projectName": "Student-App-MVC",
-        "projectPath": "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-MVC\\student-app-mvc\\Student-App-MVC.csproj",
+        "projectPath": "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-with-MVC\\Student-App-MVC\\Student-App-MVC.csproj",
         "packagesPath": "C:\\Users\\HOD-SW\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-MVC\\student-app-mvc\\obj\\",
+        "outputPath": "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-with-MVC\\Student-App-MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

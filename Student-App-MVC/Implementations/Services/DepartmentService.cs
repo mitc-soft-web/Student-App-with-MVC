@@ -21,6 +21,14 @@ public class DepartmentService : IDepartmentService
     }
     public async Task<BaseResponse<bool>> AddDepartment(CreateDepartmentRequestModel request)
     {
+        if (request == null)
+        {
+            return new BaseResponse<bool>
+            {
+                Message = "Fields cannot be empty",
+                Status = false,
+            };
+        }
         var departmentExists = await _departmentRepository.ExistsByName(request.DepartmentName);
         if (departmentExists)
         {
@@ -204,6 +212,14 @@ public class DepartmentService : IDepartmentService
             return new BaseResponse<DepartmentDTO>
             {
                 Message = $"Department with id {id} not found",
+                Status = false,
+            };
+        }
+        if (request == null)
+        {
+            return new BaseResponse<DepartmentDTO>
+            {
+                Message = "Fields cannot be empty",
                 Status = false,
             };
         }

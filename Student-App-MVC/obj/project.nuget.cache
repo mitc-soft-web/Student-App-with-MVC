@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PbKqaO2bq7Q=",
+  "dgSpecHash": "LjHqibCDus8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-MVC\\student-app-mvc\\Student-App-MVC.csproj",
+  "projectFilePath": "C:\\Users\\HOD-SW\\OneDrive\\Documents\\Software_Repos\\Student-App-with-MVC\\Student-App-MVC\\Student-App-MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HOD-SW\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\HOD-SW\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
