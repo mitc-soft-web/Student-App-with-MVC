@@ -37,8 +37,8 @@ public class DepartmentRepository : IDepartmentRepository
 
     public async Task<bool> ExistsByName(string departmentName)
     {
-        await _context.Departments.AnyAsync(dpt => dpt.DepartmentName == departmentName);
-        return true;
+        return await _context.Departments.AnyAsync(dpt => dpt.DepartmentName == departmentName);
+      
 
     }
 

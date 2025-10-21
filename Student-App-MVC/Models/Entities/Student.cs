@@ -13,8 +13,4 @@ public class Student: BaseEntity
     public string StateOfOrigin { get; set; }
     public string MatricNumber { get; set; }
     
-    private static string GenerateMatricNumber()
-    {
-        return "MITC" + Guid.NewGuid().ToString().Substring(0, 10).Replace("-", "").Trim();
-    }
 }

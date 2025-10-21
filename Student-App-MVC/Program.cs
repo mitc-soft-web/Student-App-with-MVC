@@ -10,7 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>()
-    .AddScoped<IDepartmentService, DepartmentService>();
+    .AddScoped<IDepartmentService, DepartmentService>()
+    .AddScoped<IStudentRepository, StudentRepository>()
+    .AddScoped<IStudentService, StudentService>();
 
 // Add Database
 builder.Services.AddDbContext<StudentContext>(options => 

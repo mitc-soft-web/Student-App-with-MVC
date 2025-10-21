@@ -4,7 +4,7 @@ namespace Student_App_MVC.Interfaces.Repositories;
 
 public interface IStudentRepository
 {
-    public Task<Student> AddDepartment(Student student); 
+    public Task<Student> AddStudent(Student student); 
     public Task<bool> DeleteStudent(int id);
     public Task<Student> GetStudentById(int id);
     Task<bool> ExistsEmail(string email);

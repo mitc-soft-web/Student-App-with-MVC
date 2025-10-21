@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Student_App_MVC.Implementations.Repositories;
 using Student_App_MVC.Interfaces.Repositories;
 using Student_App_MVC.Interfaces.Services;
@@ -130,20 +131,20 @@ public class DepartmentService : IDepartmentService
     //     throw new NotImplementedException();
     // }
 
-    public async Task<BaseResponse<List<DepartmentDTO>>> GetAllDepartments()
+    public async Task<BaseResponse<IEnumerable<DepartmentDTO>>> GetAllDepartmentsAsync()
     {
         var getAllDepartments = await _departmentRepository.GetAllDepartments();
         if (!getAllDepartments.Any())
         {
             _logger.LogError($"No department found");
-            return new BaseResponse<List<DepartmentDTO>>
+            return new BaseResponse<IEnumerable<DepartmentDTO>>
             {
                 Message = $"No department found",
                 Status = false,
             };
         }
         _logger.LogInformation("All departments fetched successfully");
-        return new BaseResponse<List<DepartmentDTO>>
+        return new BaseResponse<IEnumerable<DepartmentDTO>>
         {
             Message = "All departments fetched successfully",
             Status = true,
@@ -155,6 +156,16 @@ public class DepartmentService : IDepartmentService
                 CreatedDate = dpt.CreatedDate,
             }).ToList()
         };
+    }
+
+    public async Task<IEnumerable<SelectListItem>> GetDepartmentsSelectList()
+    {
+        var depts = await _departmentRepository.GetAllDepartments();
+        return depts.Select(dpt => new SelectListItem
+        {
+         Text   = dpt.DepartmentName,
+         Value = dpt.Id.ToString()
+        }).ToList();
     }
 
     public async Task<BaseResponse<List<DepartmentDTO>>> GetAllDepartmentsAndStudents()

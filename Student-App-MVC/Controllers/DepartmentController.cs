@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Student_App_MVC.Interfaces.Repositories;
 using Student_App_MVC.Interfaces.Services;
 using Student_App_MVC.Models.DTOs.Department;
 
@@ -13,11 +12,16 @@ public class DepartmentController : Controller
     {
         _departmentService = departmentService;
     }
-    // GET
-    public IActionResult Index()
+    [HttpGet]
+    public async Task<IActionResult> Index()
     {
-        var allDepartments = _departmentService.GetAllDepartments();
-        return View(allDepartments);
+        var allDepartments = await _departmentService.GetAllDepartmentsAsync();
+        if (allDepartments == null)
+        {
+            ViewBag.Message = "No data found";
+        }
+        
+        return View(allDepartments.Data);
     }
     public IActionResult GetAllDepartmentsAlongStudents()
     {
@@ -32,11 +36,11 @@ public class DepartmentController : Controller
     }
     
     [HttpPost]
-    public async Task<IActionResult> CreateDepartment([FromBody]CreateDepartmentRequestModel model)
+    public async Task<IActionResult> CreateDepartment(CreateDepartmentRequestModel model)
     {
         await _departmentService.AddDepartment(model);
         
-        return RedirectToAction("Index");
+        return RedirectToAction(nameof(Index));
     }
     
     [HttpGet]
@@ -65,7 +69,7 @@ public class DepartmentController : Controller
     }
         
     [HttpPost]
-    public async Task<IActionResult> EditItem([FromRoute]int id, [FromBody]UpdateDepartmentRequestModel model)
+    public async Task<IActionResult> EditDepartment([FromRoute]int id, [FromBody]UpdateDepartmentRequestModel model)
     {
 
         await _departmentService.UpdateDepartment(id, model);
@@ -77,7 +81,7 @@ public class DepartmentController : Controller
     public async Task<IActionResult> DeleteDepartment(int id)
     {
         var dept = await _departmentService.GetDepartmentById(id);
-        if (dept == null) return NotFound();
+        if (!dept.Status) return NotFound();
         
        return View(dept);
     }
