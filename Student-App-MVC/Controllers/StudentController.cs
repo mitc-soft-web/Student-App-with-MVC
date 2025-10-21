@@ -26,13 +26,30 @@ public class StudentController : Controller
         return View(students.Data);
     }
     
+    // [HttpGet]
+    // public async Task<IActionResult> CreateStudent()
+    // {
+    //     var departments =  await _departmentService.GetAllDepartmentsAsync();
+    //     ViewData["Departments"] = new SelectList(departments.Data, "Id", "DepartmentName");
+    //         
+    //     return View();
+    //
+    // }
+    
     [HttpGet]
     public async Task<IActionResult> CreateStudent()
     {
-        var departments =  await _departmentService.GetAllDepartmentsAsync();
-        ViewData["Departments"] = new SelectList(departments.Data, "Id", "DepartmentName");
-            
-        return View();
+        var departments = await _departmentService.GetAllDepartmentsAsync();
+        CreateStudentRequestModel request = new CreateStudentRequestModel()
+        {
+            DepartmentsSelectListItems = departments.Data.Select(dpt => new SelectListItem
+            {
+                Text = dpt.DepartmentName,
+                Value = dpt.Id.ToString()
+            })
+        };
+        
+        return View(request);
 
     }
     

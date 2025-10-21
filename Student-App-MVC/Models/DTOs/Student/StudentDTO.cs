@@ -45,6 +45,7 @@ public class CreateStudentRequestModel
     [Required]
     public string StateOfOrigin { get; set; }
     public IList<int> Departments { get; set; } = new List<int>();
+    public IEnumerable<SelectListItem> DepartmentsSelectListItems { get; set; } 
     
 }
 

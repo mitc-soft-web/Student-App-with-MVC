@@ -68,9 +68,16 @@
                     </div>
 
 
+                    @* <div class="col-md-6" style="margin-top: 20px; font-size: larger; font-weight: bold; color: darkcyan"> *@
+                    @*     <label class="control-label">Departments</label> *@
+                    @*     <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.Departments"> *@
+                    @*         <option value="">--Select Department--</option> *@
+                    @*     </select> *@
+                    @* </div> *@
+
                     <div class="col-md-6" style="margin-top: 20px; font-size: larger; font-weight: bold; color: darkcyan">
                         <label class="control-label">Departments</label>
-                        <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.Departments">
+                        <select asp-for="DepartmentId" class="form-control" asp-items="Model.DepartmentsSelectListItems">
                             <option value="">--Select Department--</option>
                         </select>
                     </div>

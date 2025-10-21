@@ -133,6 +133,6 @@ public class StudentService : IStudentService
     
     private static string GenerateMatricNumber(string deptCode)
     {
-        return $"MITC/{deptCode}" + Guid.NewGuid().ToString().Substring(0, 10).Replace("-", "").Trim();
+        return $"MITC/{deptCode}/" + Guid.NewGuid().ToString().Substring(0, 8).Replace("-", "").Trim();
     }
 }
